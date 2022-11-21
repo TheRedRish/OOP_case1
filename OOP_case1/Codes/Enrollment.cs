@@ -8,7 +8,7 @@ namespace OOP_case1.Codes
 {
     internal class Enrollment
     {
-        public List<Student>? StudentsInfo { get; set; }
+        public Student? StudentsInfo { get; set; }
         public Course? CourseInfo { get; set; }
     }
 }

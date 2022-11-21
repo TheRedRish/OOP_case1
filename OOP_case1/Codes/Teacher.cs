@@ -9,7 +9,7 @@ namespace OOP_case1.Codes
     internal class Teacher
     {
         public string? Department { get; set; }
-        public string? FirtName { get; set; }
+        public string? FirstName { get; set; }
         public string? LastName { get; set; }
 
         private DateTime _DateOfBirth;
