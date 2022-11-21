@@ -8,9 +8,9 @@ Student mikkel = new Student(5, "Mikkel", "Jensen", new DateTime(1999, 3, 10));
 
 Teacher niels = new Teacher("Programmering Underviser", "Niels", "Olesen", new DateTime(1972, 9, 11));
 
-Course oop = new("OOP", niels);
-Course grundProg = new("Grundlæggende Programmering", niels);
-Course studieTeknik = new("Studieteknik", niels);
+Course oop = new Course("OOP", niels);
+Course grundProg = new Course("Grundlæggende Programmering", niels);
+Course studieTeknik = new Course("Studieteknik", niels);
 
 List<Enrollment> courseList = new()
 {
@@ -23,10 +23,10 @@ List<Enrollment> courseList = new()
     new Enrollment(dennis, studieTeknik),
     new Enrollment(dennis, grundProg),
     new Enrollment(dennis, oop),
-    new Enrollment(ozan, grundProg),
-    new Enrollment(ozan, oop,
-    new Enrollment(camilla, grundProg),
-    new Enrollment(camilla, oop)
+    new Enrollment(rune, grundProg),
+    new Enrollment(rune, oop),
+    new Enrollment(mikkel, grundProg),
+    new Enrollment(mikkel, oop)
 };
 
 foreach (var course in courseList)
