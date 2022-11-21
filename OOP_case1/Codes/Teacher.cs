@@ -6,22 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal class Teacher
+    internal class Teacher : PersonModel
     {
         public string? Department { get; set; }
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-
-        private DateTime _DateOfBirth;
-        public DateTime DateOfBirth
-        {
-            get { return _DateOfBirth; }
-            set
-            {
-                _DateOfBirth = value;
-                Age = (int)AgeConverter.GetAge(_DateOfBirth);
-            }
-        }
-        public int? Age { get; set; }
     }
 }
