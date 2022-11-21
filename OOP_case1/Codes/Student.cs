@@ -9,5 +9,10 @@ namespace OOP_case1.Codes
     internal class Student : PersonModel
     {
         public int? StudentID { get; set; }
+
+        public Student(int studentID, string firstName, string lastName, DateTime dateOfBirth) : base(firstName, lastName, dateOfBirth)
+        {
+            StudentID = studentID;
+        }
     }
 }

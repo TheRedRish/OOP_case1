@@ -8,6 +8,7 @@ namespace OOP_case1.Codes
 {
     internal class PersonModel
     {
+        public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
 
@@ -22,5 +23,12 @@ namespace OOP_case1.Codes
             }
         }
         public int? Age { get; set; }
+
+        public PersonModel(string? firstName, string? lastName, DateTime dateOfBirth)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            DateOfBirth = dateOfBirth;
+        }
     }
 }
