@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal class Student : PersonModel
+    internal sealed class Student : PersonModel
     {
         public int? StudentID { get; set; }
 

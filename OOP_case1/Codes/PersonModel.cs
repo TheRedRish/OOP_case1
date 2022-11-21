@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal class PersonModel
+    internal abstract class PersonModel
     {
         public int Id { get; set; }
         public string? FirstName { get; set; }
