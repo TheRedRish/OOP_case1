@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal abstract class PersonModel
+    internal abstract class Person
     {
-        public int Id { get; set; }
+        private string _AssKicked = "I've just kicked ass";
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
 
@@ -24,11 +24,23 @@ namespace OOP_case1.Codes
         }
         public int? Age { get; set; }
 
-        public PersonModel(string? firstName, string? lastName, DateTime dateOfBirth)
+        public Person(string? firstName, string? lastName, DateTime dateOfBirth)
         {
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
+        }
+        public int? GetAge()
+        {
+            return Age;
+        }
+        public virtual string KickAssAndTakeNames(bool kickAss)
+        {
+            if (kickAss)
+            {
+                return _AssKicked;
+            }
+            else return FirstName + " " + LastName;
         }
     }
 }

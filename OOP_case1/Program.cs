@@ -1,5 +1,7 @@
 ﻿
 
+using OOP_case1.Codes;
+
 Student alexander = new Student(1, "Alexander", "K. H. Runge", new DateTime(2005, 5, 2));
 Student amanda = new Student(2, "Amanda", "Elisabeth Vang Gudmand", new DateTime(1999, 6, 2));
 Student dennis = new Student(3, "Dennis", "Daniel B. Paaske", new DateTime(1981, 1, 22));
@@ -12,28 +14,38 @@ Course oop = new Course("OOP", niels);
 Course grundProg = new Course("Grundlæggende Programmering", niels);
 Course studieTeknik = new Course("Studieteknik", niels);
 
-List<Enrollment> courseList = new()
-{
-    new Enrollment(alexander, studieTeknik),
-    new Enrollment(alexander, grundProg),
-    new Enrollment(alexander, oop),
-    new Enrollment(amanda, studieTeknik),
-    new Enrollment(amanda, grundProg),
-    new Enrollment(amanda, oop),
-    new Enrollment(dennis, studieTeknik),
-    new Enrollment(dennis, grundProg),
-    new Enrollment(dennis, oop),
-    new Enrollment(rune, grundProg),
-    new Enrollment(rune, oop),
-    new Enrollment(mikkel, grundProg),
-    new Enrollment(mikkel, oop)
+Enrollment enrollment = new();
+
+enrollment.EnrollmentsList = new() {
+new Enrollment(alexander, studieTeknik),
+new Enrollment(alexander, grundProg),
+new Enrollment(alexander, oop),
+new Enrollment(amanda, studieTeknik),
+new Enrollment(amanda, grundProg),
+new Enrollment(amanda, oop),
+new Enrollment(dennis, studieTeknik),
+new Enrollment(dennis, grundProg),
+new Enrollment(dennis, oop),
+new Enrollment(rune, grundProg),
+new Enrollment(rune, oop),
+new Enrollment(mikkel, grundProg),
+new Enrollment(mikkel, oop)
 };
 
-foreach (var course in courseList)
+foreach (string someCourse in niels.GetAllCourses(enrollment))
+{
+    Console.Write(someCourse + ", ");
+};
+
+foreach (var course in enrollment.EnrollmentsList)
 {
     if (course.CourseInfo != null && course.CourseInfo.TeacherInfo != null && course.StudentsInfo != null)
     {
-        Console.WriteLine(course.StudentsInfo.FirstName + " " + course.StudentsInfo.LastName + ", fag: " + course.CourseInfo.CourseName 
+        Console.Write(course.StudentsInfo.GetAge() + " ");
+        Console.WriteLine(course.StudentsInfo.FirstName + " " + course.StudentsInfo.LastName + ", fag: " + course.CourseInfo.CourseName
             + ", Lærer: " + course.CourseInfo.TeacherInfo.FirstName + " " + course.CourseInfo.TeacherInfo.LastName);
     }
 }
+
+Console.WriteLine(niels.KickAssAndTakeNames(false));
+Console.WriteLine(rune.KickAssAndTakeNames(true));
