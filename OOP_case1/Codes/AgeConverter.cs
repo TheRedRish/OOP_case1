@@ -10,7 +10,7 @@ namespace OOP_case1.Codes
     {
         public static double GetAge(DateTime dateOfBirth)
         {
-            return Math.Round(((DateTime.Now - dateOfBirth).TotalDays), 0);
+            return DateTime.Now.Year - dateOfBirth.Year;
         }
     }
 }

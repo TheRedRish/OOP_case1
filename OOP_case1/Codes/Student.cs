@@ -6,23 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal class Student
+    internal sealed class Student : PersonModel
     {
         public int? StudentID { get; set; }
 
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
-
-        private DateTime _DateOfBirth;
-        public DateTime DateOfBirth
+        public Student(int studentID, string firstName, string lastName, DateTime dateOfBirth) : base(firstName, lastName, dateOfBirth)
         {
-            get { return _DateOfBirth; }
-            set
-            {
-                _DateOfBirth = value;
-                Age = (int)AgeConverter.GetAge(_DateOfBirth);
-            }
+            StudentID = studentID;
         }
-        public int? Age { get; set; }
     }
 }

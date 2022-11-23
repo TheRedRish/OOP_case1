@@ -10,5 +10,11 @@ namespace OOP_case1.Codes
     {
         public Student? StudentsInfo { get; set; }
         public Course? CourseInfo { get; set; }
+
+        public Enrollment(Student studentInfo, Course courseInfo)
+        {
+            StudentsInfo = studentInfo;
+            CourseInfo = courseInfo;
+        }
     }
 }
