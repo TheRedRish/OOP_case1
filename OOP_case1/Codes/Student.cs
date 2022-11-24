@@ -27,5 +27,18 @@ namespace OOP_case1.Codes
             }
             return studentCourses;
         }
+        public List<string>? GetAllCourses(List<Enrollment> enrollments)
+        {
+            List<Enrollment> enrollmentsWithStudent = enrollments.FindAll(e => e.StudentsInfo.StudentID == StudentID);
+            List<string> studentCourses = new();
+            foreach (Enrollment enrollmentWithStudent in enrollmentsWithStudent)
+            {
+                if (enrollmentWithStudent.CourseInfo.CourseName != null)
+                {
+                    studentCourses.Add(enrollmentWithStudent.CourseInfo.CourseName);
+                }
+            }
+            return studentCourses;
+        }
     }
 }

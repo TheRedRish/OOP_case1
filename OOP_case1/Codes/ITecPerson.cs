@@ -9,5 +9,6 @@ namespace OOP_case1.Codes
     internal interface ITecPerson
     {
         public abstract List<string>? GetAllCourses(Enrollment enrollment);
+        public abstract List<string>? GetAllCourses(List<Enrollment> enrollments);
     }
 }

@@ -31,6 +31,19 @@ namespace OOP_case1.Codes
             }
             return studentCourses.Distinct().ToList();
         }
+        public List<string>? GetAllCourses(List<Enrollment> enrollments)
+        {
+            List<Enrollment> enrollmentsWithTeacher = enrollments.FindAll(e => e.CourseInfo.TeacherInfo.FirstName == FirstName && e.CourseInfo.TeacherInfo.LastName == LastName);
+            List<string> studentCourses = new();
+            foreach (Enrollment enrollmentWithTeacher in enrollmentsWithTeacher)
+            {
+                if (enrollmentWithTeacher.CourseInfo.CourseName != null)
+                {
+                    studentCourses.Add(enrollmentWithTeacher.CourseInfo.CourseName);
+                }
+            }
+            return studentCourses.Distinct().ToList();
+        }
         public override string KickAssAndTakeNames(bool kickAss)
         {
             if (kickAss)
