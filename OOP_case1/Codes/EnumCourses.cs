@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal enum CoursesEnum
+    internal enum EnumCourses
     {
         Clientsideprogrammering,
         Studieteknik,
