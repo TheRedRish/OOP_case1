@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_case1.Codes
 {
-    internal sealed class Student : Person , ITecPerson
+    internal sealed class Student : Person, ITecPerson
     {
         public int? StudentID { get; set; }
 
@@ -22,7 +22,7 @@ namespace OOP_case1.Codes
             {
                 if (enrollmentWithStudent.CourseInfo.CourseName != null)
                 {
-                studentCourses.Add(enrollmentWithStudent.CourseInfo.CourseName);
+                    studentCourses.Add(enrollmentWithStudent.CourseInfo.CourseName);
                 }
             }
             return studentCourses;

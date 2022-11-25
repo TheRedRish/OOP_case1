@@ -10,6 +10,7 @@ namespace OOP_case1.Codes
     {
         public Student? StudentsInfo { get; set; }
         public Course? CourseInfo { get; set; }
+        public string? EnrollementMessage { get; set; }
         public List<Enrollment> EnrollmentsList { get; set; }
         public Enrollment(Student studentInfo, Course courseInfo)
         {
@@ -26,10 +27,10 @@ namespace OOP_case1.Codes
             }         
             EnrollmentsList.Add(enrollment);
             EnrollmentsList.Sort();
-            string? checkStudent = CheckStudentCount(enrollment.CourseInfo);
-            if (checkStudent != null)
+            string? enrollmentMessage = CheckStudentCount(enrollment.CourseInfo);
+            if (enrollmentMessage != null)
             {
-                throw new Exception(checkStudent);
+                EnrollementMessage = enrollmentMessage;
             };
         }
         public void Enroll(List<Enrollment> enrollments)
@@ -57,11 +58,11 @@ namespace OOP_case1.Codes
             List<Enrollment> enrollements = EnrollmentsList.FindAll(e => e.CourseInfo == courseInfo);
             if (enrollements.Count() < 8)
             {
-                return "Der er for få elever i " + courseInfo.CourseName;
+                return "Too few students in " + courseInfo.CourseName;
             }
             else if (enrollements.Count() > 16)
             {
-                return "Der er for mange elever i " + courseInfo.CourseName;
+                return "Too many students in " + courseInfo.CourseName;
             }
             return null;
         }

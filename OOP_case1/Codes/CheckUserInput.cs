@@ -11,7 +11,7 @@ namespace OOP_case1.Codes
         public static bool CheckIfUserInputMatchesCriteria(string userInput)
         {
             bool isNumber = Int16.TryParse(userInput, out short searchNumber);
-            List<string> criterias = Enum.GetNames(typeof(EnumCourses)).ToList();
+            List<string> criterias = Enum.GetNames(typeof(EnumCriteria)).ToList();
             criterias = criterias.ConvertAll(c => c.ToLower());
 
             if (criterias.Contains(userInput.ToLower()) || (isNumber && searchNumber <= criterias.Count && searchNumber > 0))
